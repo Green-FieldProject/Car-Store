@@ -1,17 +1,19 @@
 import React, { useEffect, useState } from "react";
 import Axios from "axios";
-import "../App.css"
+import "../index"
 var App = () => {
   const [car, setcar] = useState([]);
   useEffect(() => {
     Axios.get("http://localhost:4000/api/car").then((res) => {
-      setcar(res.data);
+      setcar(res.data)
+      console.log(car);
     });
-  },[car]);
+  },[]);
 
   return (
     
     <div>
+      
     <div className="headerImg"></div>
       <center><h1>Car-Store</h1></center>
      

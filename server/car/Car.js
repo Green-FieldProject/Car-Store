@@ -1,4 +1,3 @@
-// This is the model
 
 var mongoose = require('mongoose');
 const db = require('../db/index.js');
@@ -8,7 +7,8 @@ var car= mongoose.Schema({
     name:String,
     description:String,
     imageUrl:String,
-    price:Number
+    price:Number,
+    userId : { type : mongoose.Schema.Types.ObjectId, ref: "users"}
 });
 
 var car=mongoose.model("car",car);
