@@ -22,10 +22,7 @@ function updateOne (req, res) {
     let id = req.params.id;
     console.log(id);
     car.findOneAndUpdate(id,{
-        number: req.body.number,
-    name: req.body.name,
-    types: req.body.types,
-    imageUrl: req.body.imageUrl,
+    price:req.body.price
     })
       .then(() => {
         res.send("updated");

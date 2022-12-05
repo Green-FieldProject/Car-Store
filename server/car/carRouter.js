@@ -6,7 +6,7 @@ var carController = require('./carController');
 carRouter.get("/",carController.getAll)
 carRouter.post("/",carController.createOne)
 carRouter.get("/filter",carController.filter)
-carRouter.delete('/:number',carController.deleteOne)
-carRouter.put('/:number',carController.updateOne) 
+carRouter.delete('/:id',carController.deleteOne)
+carRouter.put('/:id',carController.updateOne) 
 module.exports = carRouter;
 
