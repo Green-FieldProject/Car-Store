@@ -7,6 +7,7 @@ var App = () => {
     Axios.get("http://localhost:4000/api/car").then((res) => {
       setcar(res.data)
       console.log(car);
+      console.log("hello")
     });
   },[]);
 
