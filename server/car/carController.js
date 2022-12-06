@@ -1,8 +1,7 @@
 var car = require('./Car');
-function getAll (req, res){
-    car.find({}).then((data) => {
-      res.send(data);
-    });
+async function getAll (req, res){
+   const cars = await car.find({}).populate({path: "_id",select:'name'})
+   res.send(cars);
   };
 function createOne (req, res) {
     console.log(req.body, "done");
@@ -10,7 +9,8 @@ function createOne (req, res) {
       name: req.body.name,
       description: req.body.description,
       imageUrl: req.body.imageUrl,
-      price:req.body.price
+      price:req.body.price,
+      userId : req.body.userId 
     }).then((data) => {
       res.send(data);
     });
@@ -22,10 +22,7 @@ function updateOne (req, res) {
     let id = req.params.id;
     console.log(id);
     car.findOneAndUpdate(id,{
-        number: req.body.number,
-    name: req.body.name,
-    types: req.body.types,
-    imageUrl: req.body.imageUrl,
+    price:req.body.price
     })
       .then(() => {
         res.send("updated");
