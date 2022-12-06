@@ -4,8 +4,11 @@ var Home = (props) => {
     <div>
       {props.car.map((element) => {
         console.log(element);
-        return <OnePost element={element} key={element.id} />;
-      })}
+        return (
+            <div>
+        
+        <OnePost element={element} key={element.id} />
+      </div>)})}
     </div>
   );
 };
