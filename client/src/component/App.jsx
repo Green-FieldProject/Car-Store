@@ -18,7 +18,7 @@ var App = () => {
       console.log(car);
       // console.log("hello")
     });
-  }, [car]);
+  }, []);
 
   return (
     <div>
