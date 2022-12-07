@@ -10,7 +10,7 @@ function createOne (req, res) {
       description: req.body.description,
       imageUrl: req.body.imageUrl,
       price:req.body.price,
-      userId : req.body.userId 
+      // userId : req.body.userId 
     }).then((data) => {
       res.send(data);
     });
