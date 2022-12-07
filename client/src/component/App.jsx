@@ -26,7 +26,7 @@ var App = () => {
       <NavB/>
       
     <h2>
-    <login onClcik={} />
+    <login  />
     </h2>
 
       <h3>
