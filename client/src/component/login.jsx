@@ -35,14 +35,14 @@ export default function Login() {
 
   return (
     <div className="Login">
-      <Container>
+      <Container className="zebi">
         <Row className="vh-100 d-flex justify-content-center align-items-center">
           <Col md={8} lg={6} xs={12}>
-            <div className="border border-3 border-success "></div>
+            
             <Card className="shadow">
               <Card.Body>
                 <div className="mb-3 mt-md-4">
-                  <h4 className="fw-bold mb-2 text-uppercase ">
+                  <h4 >
                     اشري و عليك الامان
                   </h4>
                   <h6 className=" mb-5">
@@ -51,7 +51,7 @@ export default function Login() {
                   <div className="mb-3">
                     <Form onSubmit={handleSubmit}>
                       <Form.Group className="mb-3" controlId="formBasicEmail">
-                        <Form.Label className="text-center">
+                        <Form.Label >
                           Email address
                         </Form.Label>
                         <Form.Control
@@ -89,7 +89,7 @@ export default function Login() {
                       </div>
                     </Form>
                     <div className="mt-3">
-                      <p className="mb-0  text-center">
+                      <p >
                         Don't have an account?{" "}
                         <a href="http://localhost:3000/register" className="text-success  fw-bold">
                           register

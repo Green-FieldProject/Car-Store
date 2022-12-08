@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 const logoutStyle = {
   position: "absolute",
-  right: "200px",
+  right: "-100px",
   width: "200px",
   height: "120px",
  
@@ -12,9 +12,15 @@ const logoutStyle = {
 }; 
 const postStyle={ 
   position: "absolute",
-  left: "700px",
+  left: "800px",
   width: "200px",
   height: "120px",
+} 
+const navStyle = { 
+  position: "absolute",
+  right: "170px",
+  width: "250px",
+  height: "40px",
 }
 
 
@@ -48,7 +54,7 @@ const handelLogOut = () => {
                <span style={logoutStyle}  onClick={handelLogOut}>logout</span > 
                </Link>
           </Nav>
-          <Form className="d-flex">
+          <Form className="d-flex"  style={navStyle}>
             <Form.Control
               type="search"
               placeholder="Search"

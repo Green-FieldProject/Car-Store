@@ -55,7 +55,7 @@ export default function Register() {
             <Container>
                 <Row className="vh-100 d-flex justify-content-center align-items-center">
                     <Col md={8} lg={6} xs={12}>
-                        <div className="border border-3 border-success "></div>
+                        
                         <Card className="shadow">
                             <Card.Body>
                                 <div className="mb-3 mt-md-4">
@@ -63,7 +63,7 @@ export default function Register() {
                                     <div className="mb-3">
                                         <Form onSubmit={handleSubmit}>
                                             <Form.Group className="mb-3" controlId="formBasicName">
-                                                <Form.Label className="text-center">
+                                                <Form.Label >
                                                     name
                                                 </Form.Label>
                                                 <Form.Control
@@ -74,7 +74,7 @@ export default function Register() {
                                                     />
                                             </Form.Group>
                                             <Form.Group className="mb-3" controlId="formBasicEmail">
-                                                <Form.Label className="text-center">
+                                                <Form.Label >
                                                     Email address
                                                 </Form.Label>
                                                 <Form.Control
@@ -114,7 +114,7 @@ export default function Register() {
                                             </div>
                                         </Form>
                                         <div className="mt-3">
-                                            <p className="mb-0  text-center">
+                                            <p >
                                                 Don't have an account?{" "}
                                                 <a href="{''}" className="text-success  fw-bold">
                                                     Sign Up
