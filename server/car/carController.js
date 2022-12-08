@@ -19,9 +19,9 @@ function createOne (req, res) {
 
 function updateOne (req, res) {
     console.log(req.params);
-    let id = req.params.id;
-    console.log(id);
-    car.findOneAndUpdate(id,{
+    
+    // console.log(id);
+    car.findOneAndUpdate({_id:req.params.id},{
     price:req.body.price
     })
       .then(() => {
