@@ -91,8 +91,8 @@ export default function Login() {
                     <div className="mt-3">
                       <p className="mb-0  text-center">
                         Don't have an account?{" "}
-                        <a href="{''}" className="text-success  fw-bold">
-                          Sign Up
+                        <a href="http://localhost:3000/register" className="text-success  fw-bold">
+                          register
                         </a>
                       </p>
                     </div>

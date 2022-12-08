@@ -28,6 +28,7 @@ const PostCar = () => {
       .then((res) => console.log("posted"));
   };
 
+
   return (
     <body className="postPage">
       <div className="box">

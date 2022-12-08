@@ -2,7 +2,7 @@ import React from "react";
 import Home from "./home";
 import Register from "./register"; 
 import PostCar from "./postCar";
-
+// import search.jsx from "./search"
 import "../index.css";
 import "../index";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -12,7 +12,7 @@ import { Routes, Route } from "react-router-dom";
 import PrivateRoute from "./privateRoute/privateRoute"
 
 var App = () => {
-
+  
 
   return (
     <>
