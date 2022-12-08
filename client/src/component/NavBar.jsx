@@ -17,13 +17,12 @@ const handelLogOut = () => {
  localStorage.removeItem("token")
   navigate("/login")
 }
-
   return (
     <div>
       <Navbar bg="dark" variant={"dark"} expand="lg">
         <Container fluid>
-          <Navbar.Brand href="#"></Navbar.Brand>
-          <Navbar.Toggle aria-controls="navbarScroll" />
+          <Navbar.Brand >Car Town</Navbar.Brand>
+          <Navbar.Toggle  />
           <Nav
             className="me-auto my-2 my-lg-0"
             style={{ maxHeight: "150px"}}
@@ -46,7 +45,7 @@ const handelLogOut = () => {
               className="me-2"
               aria-label="Search"
             />
-            <Button variant="outline-success">Search</Button>
+            <Button className="button" variant="outline-success">Search</Button>
           </Form>
         </Container>
       </Navbar>

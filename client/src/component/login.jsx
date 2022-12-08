@@ -4,7 +4,6 @@ import { Col, Button, Row, Container, Card, Form } from "react-bootstrap";
 import axios from "axios";
 import "../index.css";
 
-
 export default function Login() {
   const [email, setEmail] = useState("");
 
@@ -43,8 +42,12 @@ export default function Login() {
             <Card className="shadow">
               <Card.Body>
                 <div className="mb-3 mt-md-4">
-                  <h4  className="fw-bold mb-2 text-uppercase ">اشري و عليك الامان</h4>
-                  <h6 className=" mb-5">Please enter your login and password!</h6>
+                  <h4 className="fw-bold mb-2 text-uppercase ">
+                    اشري و عليك الامان
+                  </h4>
+                  <h6 className=" mb-5">
+                    Please enter your login and password!
+                  </h6>
                   <div className="mb-3">
                     <Form onSubmit={handleSubmit}>
                       <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -74,9 +77,7 @@ export default function Login() {
                       <Form.Group
                         className="mb-3"
                         controlId="formBasicCheckbox"
-                      >
-                     
-                      </Form.Group>
+                      ></Form.Group>
                       <div className="d-grid">
                         <Button
                           variant="success "
