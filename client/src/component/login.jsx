@@ -34,6 +34,7 @@ export default function Login() {
   }
 
   return (
+  
     <div className="Login">
       <Container >
         <Row className="vh-100 d-flex justify-content-center align-items-center">
@@ -104,5 +105,6 @@ export default function Login() {
         </Row>
       </Container>
     </div>
+   
   );
 }
