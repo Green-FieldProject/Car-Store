@@ -30,68 +30,53 @@ const PostCar = () => {
 
   return (
     <body className="postPage">
-        
-    
-    <div className="box">
-      <form>
-        <span className="text-center">Post</span>
-        <div className="input-container">
-          <input
-            type="text"
-            placeholder="name"
-            onChange={(e) => {
-              setName(e.target.value);
-            }}
-          />
-          <input
-            type="text"
-            placeholder="description"
-            onChange={(e) => {
-              setDescription(e.target.value);
-            }}
-          />
-          <input
-            type="text"
-            placeholder="image Url"
-            onChange={(e) => {
-              setImageUrl(e.target.value);
-            }}
-          />
-          <input
-            type="text"
-            placeholder="price"
-            onChange={(e) => {
-              setPrice(e.target.value);
-            }}
-          />
-        </div>
-        <center><button
-          className="btn"
-          onClick={() => {
-            add();
-          }}
-        >
-          Post Your Car
-        </button></center>
-      </form>
-    </div>
+      <div className="box">
+        <form>
+          <span className="text-center">Post</span>
+          <div className="input-container">
+            <input
+              type="text"
+              placeholder="name"
+              onChange={(e) => {
+                setName(e.target.value);
+              }}
+            />
+            <input
+              type="text"
+              placeholder="description"
+              onChange={(e) => {
+                setDescription(e.target.value);
+              }}
+            />
+            <input
+              type="text"
+              placeholder="image Url"
+              onChange={(e) => {
+                setImageUrl(e.target.value);
+              }}
+            />
+            <input
+              type="text"
+              placeholder="price"
+              onChange={(e) => {
+                setPrice(e.target.value);
+              }}
+            />
+          </div>
+          <center>
+            <button
+              className="btn"
+              onClick={() => {
+                add();
+              }}
+            >
+              Post Your Car
+            </button>
+          </center>
+        </form>
+      </div>
     </body>
   );
 };
 
 export default PostCar;
-
-// {/* <div className="box">
-// 	<form>
-// 		<span className="text-center">login</span>
-// 	<div className="input-container">
-// 		<input type="text" required=""/>
-// 		<label>Full Name</label>
-// 	</div>
-// 	<div class="input-container">
-// 		<input type="mail" required=""/>
-// 		<label>Email</label>
-// 	</div>
-// 		<button type="button" class="btn">submit</button>
-// </form>
-// </div> */}
