@@ -10,7 +10,7 @@ function createOne (req, res) {
       description: req.body.description,
       imageUrl: req.body.imageUrl,
       price:req.body.price,
-      userId : req.body.userId 
+      // userId : req.body.userId 
     }).then((data) => {
       res.send(data);
     });
@@ -44,26 +44,26 @@ function deleteOne (req, res) {
         res.send(err);
       });
 };
-function filter(req,res){
-    try{
-        const { body:{name,price} } = req
-        if(!name && !price){
-res.status(300).send("please corect")
-        }
-        car.find({$or:[{name},{price}]}, function(err, result) 
- {
-    if (err)
-    {
-        res.send(err);
-    }
-    console.log(result);
-    res.json(result);
+// function filter(req,res){
+//     try{
+//         const { body:{name,price} } = req
+//         if(!name && !price){
+// res.status(300).send("please corect")
+//         }
+//         car.find({$or:[{name},{price}]}, function(err, result) 
+//  {
+//     if (err)
+//     {
+//         res.send(err);
+//     }
+//     console.log(result);
+//     res.json(result);
 
- });
+//  });
 
-    }
-    catch(err){
-res.status(500).send("you have err",err)
-    }
-}
-module.exports={deleteOne,updateOne,createOne,getAll,filter}
+//     }
+//     catch(err){
+// res.status(500).send("you have err",err)
+//     }
+// }
+module.exports={deleteOne,updateOne,createOne,getAll,}

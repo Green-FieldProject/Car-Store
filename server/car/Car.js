@@ -8,7 +8,7 @@ var car= mongoose.Schema({
     description:String,
     imageUrl:String,
     price:Number,
-    userId : { type : mongoose.Schema.Types.ObjectId, ref: "users"}
+    //userId : { type : mongoose.Schema.Types.ObjectId, ref: "users"}
 });
 
 var car=mongoose.model("car",car);
