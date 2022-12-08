@@ -8,10 +8,7 @@ var Home = (props) => {
   useEffect(() => {
     Axios.get("http://localhost:4000/api/car").then((res) => {
       setCar(res.data);
-
-      setCar(res.data);
       console.log(car);
-      // console.log("hello")
     });
   }, []);
   return (
