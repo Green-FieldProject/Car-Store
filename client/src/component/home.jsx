@@ -20,7 +20,7 @@ var Home = (props) => {
         return (
             <div>
         
-        <OnePost element={element} key={element.id} />
+        <OnePost element={element} key={element._id} />
       </div>)})}
     </div>
   );
