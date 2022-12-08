@@ -66,4 +66,4 @@ function deleteOne (req, res) {
 // res.status(500).send("you have err",err)
 //     }
 // }
-module.exports={deleteOne,updateOne,createOne,getAll,filter}
+module.exports={deleteOne,updateOne,createOne,getAll,}
