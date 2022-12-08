@@ -64,7 +64,7 @@ const PostCar = () => {
               }}
             />
           </div>
-          <center>
+          <center>       
             <button
               className="btn"
               onClick={() => {

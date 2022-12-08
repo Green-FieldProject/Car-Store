@@ -2,11 +2,20 @@ import React  from "react";
 import { Navbar, Nav, Form, Container, Button } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 
-const divStyle = {
-  color: 'blue', 
-  right: ' 200px'  
+const logoutStyle = {
+  position: "absolute",
+  right: "200px",
+  width: "200px",
+  height: "120px",
+ 
   
-};
+}; 
+const postStyle={ 
+  position: "absolute",
+  left: "700px",
+  width: "200px",
+  height: "120px",
+}
 
 
 const NavB =() => {
@@ -17,25 +26,26 @@ const handelLogOut = () => {
  localStorage.removeItem("token")
   navigate("/login")
 }
+
   return (
     <div>
       <Navbar bg="dark" variant={"dark"} expand="lg">
         <Container fluid>
-          <Navbar.Brand >Car Town</Navbar.Brand>
-          <Navbar.Toggle  />
+          <Navbar.Brand href="#"></Navbar.Brand>
+          <Navbar.Toggle aria-controls="navbarScroll" />
           <Nav
             className="me-auto my-2 my-lg-0"
             style={{ maxHeight: "150px"}}
             navbarScroll
           >
             <Link to="/">
-             <span >Home</span> 
+             <span  >Home</span> 
             </Link>
             <Link to="/posts">
-               <span>Post</span> 
+               <span style={postStyle}>Post</span> 
             </Link>
             <Link to="/login">
-               <span style={divStyle}  onClick={handelLogOut}>logout</span > 
+               <span style={logoutStyle}  onClick={handelLogOut}>logout</span > 
                </Link>
           </Nav>
           <Form className="d-flex">
@@ -45,7 +55,7 @@ const handelLogOut = () => {
               className="me-2"
               aria-label="Search"
             />
-            <Button className="button" variant="outline-success">Search</Button>
+            <Button variant="outline-success">Search</Button>
           </Form>
         </Container>
       </Navbar>
