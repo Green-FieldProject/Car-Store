@@ -11,7 +11,6 @@ const handelLogOut = () => {
  localStorage.removeItem("token")
   navigate("/login")
 }
-
   return (
     <div>
       <Navbar bg="dark" variant={"dark"} expand="lg">
