@@ -29,9 +29,9 @@ const handelLogOut = () => {
             <Link to="/posts">
                <h3>Post</h3> 
             </Link>
-             
-               <h3 onClick={handelLogOut}>logout</h3> 
-            
+            <Link to="/login">
+               <h4 onClick={handelLogOut}>logout</h4> 
+               </Link>
           </Nav>
           <Form className="d-flex">
             <Form.Control
