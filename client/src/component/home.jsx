@@ -2,6 +2,11 @@ import OnePost from "./OnePost";
 import {useState,useEffect} from "react"
 import Axios from "axios";
 
+
+
+
+
+
 var Home = (props) => {
   const [car, setCar] = useState([]);
   

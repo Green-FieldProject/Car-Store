@@ -2,6 +2,12 @@ import React  from "react";
 import { Navbar, Nav, Form, Container, Button } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 
+const divStyle = {
+  color: 'blue', 
+  right: ' 200px'  
+  
+};
+
 
 const NavB =() => {
 
@@ -19,17 +25,17 @@ const handelLogOut = () => {
           <Navbar.Toggle  />
           <Nav
             className="me-auto my-2 my-lg-0"
-            style={{ maxHeight: "100px" }}
+            style={{ maxHeight: "150px"}}
             navbarScroll
           >
             <Link to="/">
-             <h3>Home</h3> 
+             <span >Home</span> 
             </Link>
             <Link to="/posts">
-               <h3>Post</h3> 
+               <span>Post</span> 
             </Link>
             <Link to="/login">
-               <h4 onClick={handelLogOut}>logout</h4> 
+               <span style={divStyle}  onClick={handelLogOut}>logout</span > 
                </Link>
           </Nav>
           <Form className="d-flex">
