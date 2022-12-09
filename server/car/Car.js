@@ -13,5 +13,4 @@ var car= mongoose.Schema({
 
 var car=mongoose.model("car",car);
  
-
 module.exports = car;

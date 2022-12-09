@@ -12,13 +12,16 @@
 .imag{
     width: 1950px;
     height: 300px;
+    position: relative;
+
+
 }
 .ima{
     width: 100px;
 }
 
 .home{
-    display:f;
+    display:flex;
 }
 .text-center{
 	color:#fff;	

@@ -14,7 +14,7 @@
 
 
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate,Link } from "react-router-dom";
 import { Col, Button, Row, Container, Card, Form } from "react-bootstrap";
 import axios from "axios";
 import "../index.css";
@@ -39,11 +39,9 @@ export default function Register() {
                 email,
                 password,
             });
-
-            if (user) {
-                navigate("/");
-                localStorage.setItem("token", user.data.token);
-            }
+                alert("Account has been created")
+                navigate("/login");
+          
         } catch (error) {
             console.log(error);
             alert(error.response.data.message);
@@ -109,16 +107,16 @@ export default function Register() {
                                                     type="submit"
                                                     disabled={!validateForm()}
                                                 >
-                                                    Login
+                                                    Join US NOW
                                                 </Button>
                                             </div>
                                         </Form>
                                         <div className="mt-3">
                                             <p >
                                                 Don't have an account?{" "}
-                                                <a href="{''}" className="text-success  fw-bold">
+                                                <Link to="/login" className="text-success  fw-bold">
                                                     Sign Up
-                                                </a>
+                                                </Link>
                                             </p>
                                         </div>
                                     </div>
