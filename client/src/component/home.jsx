@@ -7,13 +7,15 @@ import Axios from "axios";
 
 
 
-var Home = (props) => {
-  const [car, setCar] = useState([]);
+var Home = ({stal}) => {
+  const [car, setCar] = useState([]);  
+  console.log(stal);
+  
   
   useEffect(() => {
     Axios.get("http://localhost:4000/api/car").then((res) => {
       setCar(res.data);
-      console.log(car);
+      console.log(car); 
     });
   }, []);
   return (
@@ -24,7 +26,7 @@ var Home = (props) => {
         return (
             <div>
         
-        <OnePost element={element} key={element._id} />
+        <OnePost element={element} key={element._id} stal = {stal} />
       </div>)})}
     </div>
   );

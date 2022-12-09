@@ -30,7 +30,8 @@ function updateOne (req, res) {
       .catch((err) => {
         res.send(err);
       });
-};
+}; 
+
 
 function deleteOne (req, res) {
     console.log(req.params);
@@ -43,7 +44,21 @@ function deleteOne (req, res) {
       .catch((err) => {
         res.send(err);
       });
-};
+};   
+function getOne(req,res){  
+
+  car.findById(req.params.id) 
+  .then((response)=>{   
+    res.send(response)
+  }) 
+  .catch((err)=>{ 
+    res.send(err)
+  })
+}
+
+
+
+
 // function filter(req,res){
 //     try{
 //         const { body:{name,price} } = req
@@ -66,4 +81,4 @@ function deleteOne (req, res) {
 // res.status(500).send("you have err",err)
 //     }
 // }
-module.exports={deleteOne,updateOne,createOne,getAll,}
+module.exports={deleteOne,updateOne,createOne,getAll,getOne}
