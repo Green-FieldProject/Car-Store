@@ -1,25 +1,13 @@
-import React, { useState } from "react";
+import React from 'react';
+import OnePost from './OnePost';
 
-const Searchs = (props) => {
-  let [query, setQuery] = useState("");
+function SearchList({ filtredData }) {
+  const filtered = filtredData.map(item =>  <OnePost key={item.id} item={item} />); 
   return (
     <div>
-      <input
-        type="text"
-        className="search"
-        placeholder="Search for..."
-        defaultValue=""
-        onChange={(e) => setQuery(e.target.value)}
-      />
-      <button
-        className="btn btn-secondary searchButton"
-        type="button"
-        onClick={(e) => props.search(query)}
-      >
-        Search
-      </button>
+      {filtered}
     </div>
   );
-};
+}
 
-export default Search;
+export default SearchList;

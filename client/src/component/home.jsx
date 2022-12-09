@@ -1,25 +1,46 @@
 import OnePost from "./OnePost";
-import {useState,useEffect} from "react"
+import { useState, useEffect } from "react";
+import { Navbar, Nav, Form, Container, Button } from "react-bootstrap";
 import Axios from "axios";
+import SearchList from "./search";
 
-var Home = (props) => {
-  const [car, setCar] = useState([]);
-  
-  useEffect(() => {
-    Axios.get("http://localhost:4000/api/car").then((res) => {
-      setCar(res.data);
-      console.log(car);
-    });
-  }, []);
+var Home = ({data}) => {
+  const [searchField, setSearchField] = useState("");
+  const filtredData = data.filter(
+    name => {
+      return (
+        name.name
+        .toLowerCase()
+        .includes(searchField.toLowerCase()) 
+      );
+    }
+  )
+  const handleChange = e => {
+    setSearchField(e.target.value);
+  };
+  function searchList() {
+    return (
+      <div>
+        <SearchList filtredData={filtredData} />
+      </div>
+    );
+  }
   return (
     <div>
-      {car.map((element) => {
-        console.log(element);
-        return (
-            <div>
-        
-        <OnePost element={element} key={element.id} />
-      </div>)})}
+      <div>
+      <Form className="d-flex">
+            <Form.Control
+              type="search"
+              placeholder="Search"
+              className="me-2"
+              aria-label="Search"
+              onChange = {handleChange}
+            />
+            <Button variant="outline-success">Search</Button>
+          </Form>
+      </div>
+      {searchList()}
+    
     </div>
   );
 };

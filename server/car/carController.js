@@ -46,11 +46,11 @@ function deleteOne (req, res) {
 };
 // function filter(req,res){
 //     try{
-//         const { body:{name,price} } = req
-//         if(!name && !price){
+//         const { body:{name} } = req
+//         if(!name){
 // res.status(300).send("please corect")
 //         }
-//         car.find({$or:[{name},{price}]}, function(err, result) 
+//         car.find({name}, function(err, result) 
 //  {
 //     if (err)
 //     {

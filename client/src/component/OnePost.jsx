@@ -1,14 +1,19 @@
 import React from "react";
 
-export default function OnePost({ element }) {
+export default function OnePost({item}) {
   return (
-   <center> <div className="element">
-      <section className="name">{element.name}</section>
-      <section className="description">{element.description}</section>
-      <img src={element.imageUrl} alt="" />
-      <section className="price">{element.price}</section>
-      <section className="userId">{element.userId}</section>
-    </div></center>
+    <div className="card">
+      <div className="card-header">
+        <div className="price">
+          <span className="letter">{item.price}</span>
+        </div>
+        <div className="card-title-group">
+          <h5 className="card-title">{item.name}</h5>
+        </div>
+      </div>
+       <img className="card-image" src={item.imageUrl} alt="Logo" /> 
+      <div className="card-text">{item.description}</div>
+    </div>
   );
 }
 //todo akraw louled chnya aammlet ahwka aamlet  delete wel update wel updatte bch taamloha bel price 

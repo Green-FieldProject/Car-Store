@@ -1,11 +1,14 @@
-import React  from "react";
+import React,{useState} from "react";
 import { Navbar, Nav, Form, Container, Button } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
-
-
-const NavB =() => {
-
+import Home from "./home.jsx";
+const NavB =({props}) => {
+  const [search, setSearch] = useState("");
   const navigate = useNavigate()
+  
+  const handleChange = e => {
+    setSearch(e.target.value);
+  };
 
 const handelLogOut = () => {
  localStorage.removeItem("token")
@@ -32,15 +35,6 @@ const handelLogOut = () => {
                <h4 onClick={handelLogOut}>logout</h4> 
                </Link>
           </Nav>
-          <Form className="d-flex">
-            <Form.Control
-              type="search"
-              placeholder="Search"
-              className="me-2"
-              aria-label="Search"
-            />
-            <Button variant="outline-success">Search</Button>
-          </Form>
         </Container>
       </Navbar>
     </div>
