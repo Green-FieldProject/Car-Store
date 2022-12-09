@@ -34,27 +34,25 @@ export default function Login() {
   }
 
   return (
-  
     <div className="Login">
+<<<<<<< HEAD
       <Container >
+=======
+      <Container>
+>>>>>>> b34e1f7 (up)
         <Row className="vh-100 d-flex justify-content-center align-items-center">
           <Col md={8} lg={6} xs={12}>
-            
             <Card className="shadow">
               <Card.Body>
                 <div className="mb-3 mt-md-4">
-                  <h4 >
-                    اشري و عليك الامان
-                  </h4>
+                  <h4>اشري و عليك الامان</h4>
                   <h6 className=" mb-5">
                     Please enter your login and password!
                   </h6>
                   <div className="mb-3">
                     <Form onSubmit={handleSubmit}>
                       <Form.Group className="mb-3" controlId="formBasicEmail">
-                        <Form.Label >
-                          Email address
-                        </Form.Label>
+                        <Form.Label>Email address</Form.Label>
                         <Form.Control
                           type="email"
                           placeholder="Enter email"
@@ -90,9 +88,12 @@ export default function Login() {
                       </div>
                     </Form>
                     <div className="mt-3">
-                      <p >
+                      <p>
                         Don't have an account?{" "}
-                        <a href="http://localhost:3000/register" className="text-success  fw-bold">
+                        <a
+                          href="http://localhost:3000/register"
+                          className="text-success  fw-bold"
+                        >
                           register
                         </a>
                       </p>
@@ -105,6 +106,5 @@ export default function Login() {
         </Row>
       </Container>
     </div>
-   
   );
 }

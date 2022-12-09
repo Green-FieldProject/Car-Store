@@ -12,9 +12,7 @@ import {
   MDBCol
 } from 'mdb-react-ui-kit'; 
 
-export default function OnePost({ element  }) {  
-
-
+export default function OnePost({ element }) {  
   const [price,setPrice] = useState('')
 
 

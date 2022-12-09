@@ -26,6 +26,13 @@ var App = () => {
    
         <Route index path="/" element={<PrivateRoute >  <NavB /><Home /></PrivateRoute>} />
         <Route  path="/posts" element={ <PrivateRoute ><PostCar/></PrivateRoute> } />
+      
+      <Routes>
+        <Route  path="/login" element={ <Login /> } />
+        <Route  path="/register" element={ <Register /> } />
+
+        <Route index path="/" element={<PrivateRoute ><NavB /><Home/></PrivateRoute>} />
+        <Route  path="/posts" element={ <PrivateRoute ><NavB /><PostCar/></PrivateRoute> } />
         <Route  path="/posts/:id" element={ <PrivateRoute ><div>fff</div></PrivateRoute> } />
       </Routes>
     </>
