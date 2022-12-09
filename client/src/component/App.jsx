@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import Home from "./home";
 import Register from "./register"; 
 import PostCar from "./postCar"; 
@@ -12,7 +12,12 @@ import Login from "./login";
 import { Routes, Route } from "react-router-dom";
 import PrivateRoute from "./privateRoute/privateRoute"
 
-var App = () => {
+var App = () => { 
+
+  const [id,setId]= useState("")  
+  const stal=(input)=>{ 
+    setId(input)
+  }
   
 
 
@@ -22,9 +27,9 @@ var App = () => {
       <Routes>
         <Route  path="/login" element={ <Login /> } />
         <Route  path="/register" element={ <Register /> } /> 
-        <Route  path="/details" element={ <PrivateRoute>< Details  /> </PrivateRoute>  } /> 
+        <Route  path="/details" element={ <PrivateRoute>< Details id={id} /> </PrivateRoute>  } /> 
    
-        <Route index path="/" element={<PrivateRoute >  <NavB /><Home /></PrivateRoute>} />
+        <Route index path="/" element={<PrivateRoute >  <NavB /><Home stal = {stal}/></PrivateRoute>} />
         <Route  path="/posts" element={ <PrivateRoute ><PostCar/></PrivateRoute> } />
         <Route  path="/posts/:id" element={ <PrivateRoute ><div>fff</div></PrivateRoute> } />
       </Routes>

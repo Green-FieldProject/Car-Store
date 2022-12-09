@@ -6,6 +6,8 @@ const authMiddelware = require("../middleware/middleware")
 
 carRouter.get("/",carController.getAll)
 // carRouter.get("/filter",carController.filter)
+ carRouter.get('/:id' , carController.getOne) 
+
 
 carRouter.post("/",authMiddelware,carController.createOne)
 carRouter.delete('/:id',carController.deleteOne)

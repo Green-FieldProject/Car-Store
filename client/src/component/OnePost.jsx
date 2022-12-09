@@ -12,8 +12,9 @@ import {
   MDBCol
 } from 'mdb-react-ui-kit'; 
 
-export default function OnePost({ element  }) {  
+export default function OnePost({ element ,stal }) {  
 
+  console.log(stal);
 
   const [price,setPrice] = useState('')
 
@@ -44,12 +45,7 @@ var del=(id)=>{
 
 
   const Nav =() => {
-
-    
-  
-  
-   
-    navigate("/details")
+   navigate(`/details`)
   }
  
 
@@ -64,7 +60,8 @@ var del=(id)=>{
     </MDBCol >  
     <MDBCol md='8'>
     <MDBCardBody>
-      <MDBCardTitle onClick={()=>{ Nav()}} >{element.name}</MDBCardTitle>
+      <MDBCardTitle onClick={()=>{ Nav() 
+      stal(element._id)}} >{element.name}</MDBCardTitle>
       <MDBCardText>{element.description}</MDBCardText> 
       <MDBCardText>{element.price} DT</MDBCardText> 
       <input className="input2" placeholder="price" type="number" id="quantity" name="quantity" min="1" max="10" onChange={(e)=>{ setPrice(e.target.value)}} />
