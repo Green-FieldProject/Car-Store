@@ -16,7 +16,7 @@ const Details=({id})=>{
     }) 
 },[]) 
   
-
+//egege
     
 return ( 
 
