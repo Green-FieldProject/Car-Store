@@ -57,7 +57,7 @@ const PostCar = () => {
               }}
             />
             <input
-              type="text"
+              type="number"
               placeholder="price"
               onChange={(e) => {
                 setPrice(e.target.value);
@@ -66,7 +66,7 @@ const PostCar = () => {
           </div>
           <center>       
             <button
-              className="btn"
+              className="bttn"
               onClick={() => {
                 add();
               }}

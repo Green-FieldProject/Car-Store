@@ -20,6 +20,7 @@ var Home = ({stal}) => {
   }, []);
   return (
     <div>
+       <img className="imag" src="https://scontent.xx.fbcdn.net/v/t1.15752-9/317808319_702182981263372_5492111919281268759_n.png?_nc_cat=100&ccb=1-7&_nc_sid=aee45a&_nc_ohc=67FR5bAjnDkAX_58Ryh&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AdTHbY3JKvUJ7_73b1zFPorGl5LuVxXnxwfm89dX35HVoQ&oe=63BAAF85" alt="" />
       {car.map((element) => {
         console.log(element);
         return (
