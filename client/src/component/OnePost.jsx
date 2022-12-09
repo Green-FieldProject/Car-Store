@@ -1,5 +1,6 @@
 import axios from "axios";
-import React, {useState}from "react"; 
+import React, {useState}from "react";  
+import { Link, useNavigate } from "react-router-dom";
 import {
   MDBCard,
   MDBCardBody,
@@ -9,10 +10,13 @@ import {
   MDBBtn,
   MDBRow,
   MDBCol
-} from 'mdb-react-ui-kit';
+} from 'mdb-react-ui-kit'; 
 
-export default function OnePost({ element }) {  
+export default function OnePost({ element  }) {  
+
+
   const [price,setPrice] = useState('')
+
 
 var del=(id)=>{
     axios.delete(`http://localhost:4000/api/car/${id}`)
@@ -22,7 +26,9 @@ var del=(id)=>{
     .catch(err=>{console.log(err)
   })
   window.location.reload(false)
-  }    
+  }   
+  
+  
  var update=(id)=> {
   axios.put(`http://localhost:4000/api/car/${id}`,{price})
     .then((res)=>{
@@ -33,7 +39,18 @@ var del=(id)=>{
   window.location.reload(false)
   
   }
+ 
+  const navigate = useNavigate()
 
+
+  const Nav =() => {
+
+    
+  
+  
+   
+    navigate("/details")
+  }
  
 
 
@@ -47,7 +64,7 @@ var del=(id)=>{
     </MDBCol >  
     <MDBCol md='8'>
     <MDBCardBody>
-      <MDBCardTitle>{element.name}</MDBCardTitle>
+      <MDBCardTitle onClick={()=>{ Nav()}} >{element.name}</MDBCardTitle>
       <MDBCardText>{element.description}</MDBCardText> 
       <MDBCardText>{element.price} DT</MDBCardText> 
       <input className="input2" placeholder="price" type="number" id="quantity" name="quantity" min="1" max="10" onChange={(e)=>{ setPrice(e.target.value)}} />
