@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Searchs = (props) => {
+const Search = (props) => {
   let [query, setQuery] = useState("");
   return (
     <div>
