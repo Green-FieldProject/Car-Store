@@ -31,7 +31,10 @@ async function login(req, res) {
     console.log(error)
     res.status(500).send(error)
   }
-};
+}; 
+
+
+
 
 const register = async (req, res) => {
   try {
