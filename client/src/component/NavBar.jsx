@@ -50,8 +50,8 @@ const handelLogOut = () => {
 }
 
   return (
-    <div>
-      <Navbar bg="light" variant={"light"} expand="lg">
+    <div style={{width:"100vw", maxWidth:"100vw"}}>
+      <Navbar bg="light" variant={"light"} expand="lg" >
         <Container fluid>
           <Navbar.Brand href="#"></Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />

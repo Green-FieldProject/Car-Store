@@ -50,28 +50,23 @@ export default function OnePost({ element ,stal }) {
  
 
 
-
+console.log(element.imageUrl )
   return ( 
-   <center>
-    <MDBCard style={{ maxWidth: '600px' ,padding: '10px' ,maxHeight : "10" }}> 
-    <MDBRow className='g-0'> 
-    <MDBCol md='8'> 
-    <MDBCardImage src= {element.imageUrl} position='top' alt='...' /> 
-    </MDBCol >  
-    <MDBCol md='8'>
-    <MDBCardBody>
-      <MDBCardTitle onClick={()=>{ Nav() 
-      stal(element._id)}} >{element.name}</MDBCardTitle>
-      <MDBCardText>{element.description}</MDBCardText> 
-      <MDBCardText>{element.price} DT</MDBCardText> 
-      {/* <input className="input2" placeholder="price" type="number" id="quantity" name="quantity" min="1" max="10" onChange={(e)=>{ setPrice(e.target.value)}} /> */}
-      
-      {/* <MDBBtn href='#' onClick={()=>{update(element._id)}}>Update</MDBBtn> 
-      <button className="delete" href='#' onClick={()=>{del(element._id)}}>Delete</button>  */}
-    </MDBCardBody>  
-    </MDBCol>
-    </MDBRow>
-  </MDBCard> 
-  </center>
+    <MDBCol>
+    <MDBCard>
+      <MDBCardImage
+        src={element.imageUrl || "https://img.freepik.com/free-vector/modern-blue-urban-adventure-suv-vehicle-illustration_1344-205.jpg?w=2000"}
+        alt='...'
+        position='top'
+      />
+      <MDBCardBody>
+        <MDBCardTitle>{element.name}</MDBCardTitle>
+        <MDBCardText>
+         {element.price} DT
+        </MDBCardText>
+      </MDBCardBody>
+    </MDBCard>
+  </MDBCol>
+ 
   );
 }
