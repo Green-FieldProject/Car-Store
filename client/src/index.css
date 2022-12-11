@@ -231,3 +231,7 @@ body {
   opacity: 1;
   transition: opacity 500ms;
 }
+.ml-2{
+  text-align: center;
+  font-size: 30px;
+}

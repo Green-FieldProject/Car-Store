@@ -3,7 +3,6 @@ import Home from "./home";
 import Register from "./register";
 import PostCar from "./postCar";
 import Details from "./postDetail";
-// import search.jsx from "./search"
 import "../index.css";
 import "../index";
 import Axios from "axios";
@@ -13,6 +12,7 @@ import Login from "./login";
 import { Route, Routes } from "react-router-dom";
 import PrivateRoute from "./privateRoute/privateRoute";
 import MyAdds from "./myAdds";
+import Footer from "./footer"
 
 var App = () => {
   const [car, setCar] = useState([]);
@@ -34,6 +34,7 @@ var App = () => {
             <PrivateRoute>
               <NavB />
               <Details />
+              <Footer />
             </PrivateRoute>
           }
         />
@@ -46,6 +47,7 @@ var App = () => {
               {" "}
               <NavB />
               <Home />
+              <Footer />
             </PrivateRoute>
           }
         />
@@ -55,6 +57,7 @@ var App = () => {
             <PrivateRoute>
               <NavB />
               <PostCar />
+              <Footer />
             </PrivateRoute>
           }
         />
@@ -65,10 +68,12 @@ var App = () => {
             <PrivateRoute>
               <NavB />
               <MyAdds />
+              <Footer />
             </PrivateRoute>
           }
         />
       </Routes>
+      
     </div>
   );
 };
