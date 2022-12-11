@@ -36,7 +36,7 @@ const NavB = ({ props }) => {
               <span>Post</span>
             </Link>
             <Link to="/myadds" className="text-decoration-none text-black">
-              <span>MyAds</span>
+              <span>Profile</span>
             </Link>
             <Link to="/login" className="text-decoration-none text-black">
               <span onClick={handelLogOut}>logout</span>
