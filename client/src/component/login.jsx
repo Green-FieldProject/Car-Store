@@ -44,7 +44,11 @@ export default function Login() {
             <Card className="shadow">
               <Card.Body>
                 <div className="mb-3 mt-md-4">
-                  <h4>اشري و عليك الامان</h4>
+                  <h4>
+             صوّر بيع
+•
+لوّج إشري
+         </h4>
                   <h6 className=" mb-5">
                     Please enter your login and password!
                   </h6>
