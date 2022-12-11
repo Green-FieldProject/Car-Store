@@ -1,84 +1,69 @@
-var car = require('./Car');
-async function getAll (req, res){
-   const cars = await car.find({}).populate({path: "_id",select:'name'})
-   res.send(cars);
-  };
-function createOne (req, res) {
-    console.log(req.body, "done");
-    car.insertMany({
+var car = require("./Car");
+
+async function getAll(req, res) {
+  const cars = await car.find({}).populate({ path: "_id", select: "name" });
+  res.send(cars);
+}
+
+function createOne(req, res) {
+  console.log(req.user);
+  car
+    .insertMany({
       name: req.body.name,
       description: req.body.description,
       imageUrl: req.body.imageUrl,
-      price:req.body.price,
-      // userId : req.body.userId 
-    }).then((data) => {
+      price: req.body.price,
+      nmr : req.body.nmr,
+      userId: req.user["_id"],
+    })
+    .then((data) => {
       res.send(data);
     });
-};
+}
 
+function updateOne(req, res) {
+  console.log(req.params);
 
-function updateOne (req, res) {
-    console.log(req.params);
-    
-    // console.log(id);
-    car.findOneAndUpdate({_id:req.params.id},{
-    price:req.body.price
+  // console.log(id);
+  car
+    .findOneAndUpdate(
+      { _id: req.params.id },
+      {
+        price: req.body.price,
+      }
+    )
+    .then(() => {
+      res.send("updated");
     })
-      .then(() => {
-        res.send("updated");
-      })
-      .catch((err) => {
-        res.send(err);
-      });
-}; 
+    .catch((err) => {
+      res.send(err);
+    });
+}
 
+function deleteOne(req, res) {
+  console.log(req.params);
+  let id = req.params.id;
+  console.log(id);
+  car
+    .findByIdAndDelete(id)
+    .then(() => {
+      res.send("deleted");
+    })
+    .catch((err) => {
+      res.send(err);
+    });
+}
 
-function deleteOne (req, res) {
-    console.log(req.params);
-    let id = req.params.id;
-    console.log(id);
-    car.findByIdAndDelete(id)
-      .then(() => {
-        res.send("deleted");
-      })
-      .catch((err) => {
-        res.send(err);
-      });
-};   
-function getOne(req,res){  
-
-  car.findById(req.params.id) 
-  .then((response)=>{   
-    res.send(response)
-  }) 
-  .catch((err)=>{ 
-    res.send(err)
-  })
+function getOne(req, res) {
+  car
+    .findById(req.params.id)
+    .then((response) => {
+      res.send(response);
+    })
+    .catch((err) => {
+      res.send(err);
+    });
 }
 
 
-
-
-// function filter(req,res){
-//     try{
-//         const { body:{name,price} } = req
-//         if(!name && !price){
-// res.status(300).send("please corect")
-//         }
-//         car.find({$or:[{name},{price}]}, function(err, result) 
-//  {
-//     if (err)
-//     {
-//         res.send(err);
-//     }
-//     console.log(result);
-//     res.json(result);
-
-//  });
-
-//     }
-//     catch(err){
-// res.status(500).send("you have err",err)
-//     }
-// }
-module.exports={deleteOne,updateOne,createOne,getAll,getOne}
+module.exports = { deleteOne, updateOne, createOne, getAll, getOne };
