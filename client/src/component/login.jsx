@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Col, Button, Row, Container, Card, Form } from "react-bootstrap";
+import { Button, Card, Col, Container, Form, Row } from "react-bootstrap";
 import axios from "axios";
 import "../index.css";
 
@@ -10,6 +10,7 @@ export default function Login() {
   const [password, setPassword] = useState("");
 
   const navigate = useNavigate();
+
   function validateForm() {
     return email.length > 0 && password.length > 0;
   }
@@ -25,7 +26,9 @@ export default function Login() {
 
       if (user) {
         navigate("/");
+        console.log(user.data.id);
         localStorage.setItem("token", user.data.token);
+        localStorage.setItem("id", user.data.id);
       }
     } catch (error) {
       console.log(error);
@@ -75,7 +78,7 @@ export default function Login() {
                       ></Form.Group>
                       <div className="d-grid">
                         <Button
-                          variant="success "
+                          variant="danger "
                           type="submit"
                           disabled={!validateForm()}
                         >
@@ -88,7 +91,7 @@ export default function Login() {
                         Don't have an account?{" "}
                         <a
                           href="http://localhost:3000/register"
-                          className="text-success  fw-bold"
+                          className="text-danger  fw-bold"
                         >
                           register
                         </a>

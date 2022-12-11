@@ -1,40 +1,38 @@
-const users = require("../usersRoutes/usersSchema")
-const jwt = require("jsonwebtoken")
+const users = require("../usersRoutes/usersSchema");
+const jwt = require("jsonwebtoken");
 
 var authMiddelware = async function (req, res, next) {
-    // TODO: Implement your rate limiter here
+  // TODO: Implement your rate limiter here
 
-    const { headers: { auth } } = req
+  const {
+    headers: { auth },
+  } = req;
 
-    if (!auth) {
-      return res.status(400).json({
-        message: "unauthorized"
-      })
-    }
+  if (!auth) {
+    return res.status(400).json({
+      message: "unauthorized",
+    });
+  }
 
-    const decodedToken = await jwt.decode(auth)
+  const decodedToken = await jwt.decode(auth);
 
-    if (!decodedToken) {
-      return res.status(400).json({
-        message: "unauthorized"
-      })
-    }
+  if (!decodedToken) {
+    return res.status(400).json({
+      message: "unauthorized",
+    });
+  }
 
+  const user = await users.findById(decodedToken.id);
 
-    const user = await users.findById(decodedToken.id)
+  if (!user) {
+    return res.status(400).json({
+      message: "unauthorized",
+    });
+  }
 
-    if (!user) {
-      return res.status(400).json({
-        message: "unauthorized"
-      })
-    }
+  req.user = user;
 
- res.user = user
+  next();
+};
 
-
-  
-  
-    next()
-  };
-  
-  module.exports = authMiddelware;
+module.exports = authMiddelware;

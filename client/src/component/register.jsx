@@ -103,7 +103,7 @@ export default function Register() {
                                             </Form.Group>
                                             <div className="d-grid">
                                                 <Button
-                                                    variant="success "
+                                                    variant="danger "
                                                     type="submit"
                                                     disabled={!validateForm()}
                                                 >
@@ -114,7 +114,7 @@ export default function Register() {
                                         <div className="mt-3">
                                             <p >
                                                 Don't have an account?{" "}
-                                                <Link to="/login" className="text-success  fw-bold">
+                                                <Link to="/login" className="text-danger  fw-bold">
                                                     Sign Up
                                                 </Link>
                                             </p>
