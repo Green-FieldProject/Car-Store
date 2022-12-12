@@ -13,7 +13,6 @@ import Axios from "axios";
 function MyAdds() {
   const userID = localStorage.getItem("id");
   const [car, setCar] = useState([]);
-
   useEffect(() => {
     Axios.get("http://localhost:4000/api/car").then((res) => {
       setCar(res.data.filter((item) => item.userId === userID));

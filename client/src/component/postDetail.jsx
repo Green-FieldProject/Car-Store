@@ -8,7 +8,8 @@ const Details = () => {
   const [data, setData] = useState("");
   const [love, setLove] = useState(0);
 
-  const { id } = useParams();
+  const { id } = useParams(); 
+  
 
   useEffect(() => {
     axios.get(`http://localhost:4000/api/car/${id}`).then((res) => {

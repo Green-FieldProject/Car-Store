@@ -1,18 +1,3 @@
-
-
-// const Register = () => {
-//     return (
-//         <div>
-//             register
-//         </div>
-//     );
-// }
-
-// export default Register;
-
-
-
-
 import React, { useState } from "react";
 import { useNavigate,Link } from "react-router-dom";
 import { Col, Button, Row, Container, Card, Form } from "react-bootstrap";

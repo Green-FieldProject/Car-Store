@@ -21,7 +21,8 @@ var App = () => {
       setCar(res.data);
       console.log(car);
     });
-  }, []);
+  }, []); 
+  
 
   return (
     <div className="mainApp">
